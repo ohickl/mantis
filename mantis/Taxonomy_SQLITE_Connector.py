@@ -69,11 +69,13 @@ class Taxonomy_SQLITE_Connector():
                 already_added.add(yield_str)
 
     def download_data(self):
-        url = 'https://data.gtdb.ecogenomic.org/releases/latest/'
-        ar_url = f'{url}ar122_metadata.tar.gz'
-        bac_url = f'{url}bac120_metadata.tar.gz'
-        ar_file = f'{self.temp_folder}ar122_metadata.tar.gz'
-        bac_file = f'{self.temp_folder}bac120_metadata.tar.gz'
+        url = 'https://data.gtdb.ecogenomic.org/releases/release202/202.0/'
+        ar_mdata_name = 'ar122_metadata_r202.tar.gz'
+        bac_mdata_name = 'bac120_metadata_r202.tar.gz'
+        ar_url = f'{url}{ar_mdata_name}'
+        bac_url = f'{url}{bac_mdata_name}'
+        ar_file = f'{self.temp_folder}{ar_mdata_name}'
+        bac_file = f'{self.temp_folder}{bac_mdata_name}'
         taxonomy_file = f'{self.temp_folder}new_taxdump.tar.gz'
 
         taxonomy_url = 'https://ftp.ncbi.nlm.nih.gov/pub/taxonomy/new_taxdump/new_taxdump.tar.gz'
