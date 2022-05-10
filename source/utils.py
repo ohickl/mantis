@@ -1029,10 +1029,11 @@ def yield_file(list_of_files):
         c += 1
 
 def download_unifunc():
-    unifunc_folder= MANTIS_FOLDER + 'Resources' + SPLITTER +'UniFunc/'
-    unifunc_url='https://github.com/PedroMTQ/UniFunc.git'
+    unifunc_folder = MANTIS_FOLDER + 'Resources' + SPLITTER + 'UniFunc/'
+    unifunc_url = 'https://github.com/PedroMTQ/UniFunc.git'
+    unifunc_release = '1.1'
     Path(unifunc_folder).mkdir(parents=True, exist_ok=True)
-    run_command('git clone '+unifunc_url+' '+unifunc_folder)
+    run_command(f'git clone {unifunc_url} --branch {unifunc_release} {unifunc_folder}')
 
 
 def unifunc_downloaded():
